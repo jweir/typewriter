@@ -1,0 +1,12 @@
+node_modules
+bin
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/.vim/
+*.gem

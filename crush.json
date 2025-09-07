@@ -1,0 +1,16 @@
+{
+  "$schema": "https://charm.land/crush.json",
+  "lsp": {
+    "ruby": {
+      "command": "bundle exec srb tc --lsp",
+      "args": [],
+      "filetypes": ["ruby"]
+    }
+  },
+  "typecheck": {
+    "ruby": {
+      "command": ["bundle", "exec", "srb", "tc"],
+      "patterns": ["**/*.rb"]
+    }
+  }
+}
