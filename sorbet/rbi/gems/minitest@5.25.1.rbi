@@ -769,7 +769,15 @@ end
 
 # source://minitest//lib/minitest/spec.rb#41
 class Minitest::Expectation < ::Struct
+  # Returns the value of attribute ctx
+  #
+  # @return [Object] the current value of ctx
   def ctx; end
+
+  # Sets the attribute ctx
+  #
+  # @param value [Object] the value to set the attribute ctx to.
+  # @return [Object] the newly set value
   def ctx=(_); end
 
   # source://minitest//lib/minitest/spec.rb#25
@@ -832,7 +840,15 @@ class Minitest::Expectation < ::Struct
   # source://minitest//lib/minitest/spec.rb#25
   def path_wont_exist(*args, **_arg1); end
 
+  # Returns the value of attribute target
+  #
+  # @return [Object] the current value of target
   def target; end
+
+  # Sets the attribute target
+  #
+  # @param value [Object] the value to set the attribute target to.
+  # @return [Object] the newly set value
   def target=(_); end
 
   # source://minitest//lib/minitest/spec.rb#25
@@ -1285,7 +1301,7 @@ end
 # source://minitest//lib/minitest.rb#591
 Minitest::Reportable::BASE_DIR = T.let(T.unsafe(nil), String)
 
-# source://minitest//lib/minitest.rb#734
+# source://minitest//lib/minitest.rb#732
 class Minitest::Reporter < ::Minitest::AbstractReporter
   # @return [Reporter] a new instance of Reporter
   #
