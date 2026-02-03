@@ -15,7 +15,8 @@ module Generators
       'align' => { desc: 'Alignment of content', values: %w[left right center justify], type: :enum },
       'alt' => { desc: 'Alternative text for images', values: nil, type: :string },
       'async' => { desc: 'Script should execute asynchronously', values: nil, type: :boolean },
-      'autocapitalize' => { desc: 'Controls automatic capitalization of user input', values: %w[off none on sentences words characters], type: :enum },
+      'autocapitalize' => { desc: 'Controls automatic capitalization of user input',
+                            values: %w[off none on sentences words characters], type: :enum },
       'autocomplete' => { desc: 'Form/input autocompletion', values: %w[on off], type: :enum },
       'autofocus' => { desc: 'Element should be focused on page load', values: nil, type: :boolean },
       'autoplay' => { desc: 'Media will start playing automatically', values: nil, type: :boolean },
@@ -31,7 +32,8 @@ module Generators
       'contenteditable' => { desc: 'Whether content is editable', values: %w[true false], type: :enum },
       'controls' => { desc: 'Show media playback controls', values: nil, type: :boolean },
       'coords' => { desc: 'Coordinates for image maps', values: nil, type: :string },
-      'crossorigin' => { desc: 'How to handle cross-origin requests', values: %w[anonymous use-credentials], type: :enum },
+      'crossorigin' => { desc: 'How to handle cross-origin requests', values: %w[anonymous use-credentials],
+                         type: :enum },
       # data is a custom method
       # 'data' => { desc: 'Custom data attributes', values: nil, type: :string },
       'datetime' => { desc: 'Date/time of element content', values: nil, type: :datetime },
@@ -52,17 +54,19 @@ module Generators
                          values: ['application/x-www-form-urlencoded', 'multipart/form-data', 'text/plain'], type: :enum },
       'formmethod' => { desc: 'HTTP method for form submission via this button', values: %w[get post], type: :enum },
       'formnovalidate' => { desc: 'Skip form validation when submitting via this button', values: nil, type: :boolean },
-      'formtarget' => { desc: 'Where to display response when submitting form via this button', values: %w[_blank _self _parent _top], type: :enum },
+      'formtarget' => { desc: 'Where to display response when submitting form via this button',
+                        values: %w[_blank _self _parent _top], type: :enum },
       'headers' => { desc: 'Related header cells for data cell', values: nil, type: :string },
       'height' => { desc: 'Height of element', values: nil, type: :number_or_string },
       'hidden' => { desc: 'Element is not displayed', values: nil, type: :boolean },
       'high' => { desc: 'Upper range of meter', values: nil, type: :number },
       'href' => { desc: 'URL of linked resource', values: nil, type: :url },
       'hreflang' => { desc: 'Language of linked resource', values: nil, type: :string },
-      'fetchpriority' => { desc: 'Hint for relative priority of resource fetching', values: %w[high low auto], type: :enum },
+      'fetchpriority' => { desc: 'Hint for relative priority of resource fetching', values: %w[high low auto],
+                           type: :enum },
       'id' => { desc: 'Unique identifier for element', values: nil, type: :string },
       'inert' => { desc: 'Element is inert (non-interactive)', values: nil, type: :boolean },
-      'inputmode' => { desc: 'Hint about expected input type for virtual keyboards', 
+      'inputmode' => { desc: 'Hint about expected input type for virtual keyboards',
                        values: %w[none text decimal numeric tel search email url], type: :enum },
       'integrity' => { desc: 'Subresource integrity hash', values: nil, type: :string },
       'ismap' => { desc: 'Image is server-side image map', values: nil, type: :boolean },
@@ -94,8 +98,8 @@ module Generators
       'preload' => { desc: 'How media should be loaded', values: %w[auto metadata none], type: :enum },
       'readonly' => { desc: 'Input field cannot be modified', values: nil, type: :boolean },
       'referrerpolicy' => { desc: 'Referrer policy for requests initiated by the element',
-                            values: ['no-referrer', 'no-referrer-when-downgrade', 'origin', 'origin-when-cross-origin',
-                                     'same-origin', 'strict-origin', 'strict-origin-when-cross-origin', 'unsafe-url'], type: :enum },
+                            values: %w[no-referrer no-referrer-when-downgrade origin origin-when-cross-origin
+                                       same-origin strict-origin strict-origin-when-cross-origin unsafe-url], type: :enum },
       'rel' => { desc: 'Relationship of linked resource',
                  values: %w[alternate author bookmark help license next nofollow noreferrer prefetch prev search tag], type: :enum },
       'required' => { desc: 'Input must be filled out', values: nil, type: :boolean },
@@ -258,29 +262,29 @@ module Generators
         name = clean_name(attr_name)
 
         if name == 'data'
-          ['sig { params(suffix: String, value: String).returns(FunHtml::Attribute) }',
+          ['sig { params(suffix: String, value: String).returns(Typewriter::Attribute) }',
            "def #{name}(suffix, value);end"].join("\n")
         else
           method =
             case meta[:type]
             in :boolean
-              ['sig { params(value: T::Boolean).returns(FunHtml::Attribute) }',
+              ['sig { params(value: T::Boolean).returns(Typewriter::Attribute) }',
                "def #{name}(value);end"]
             in :boolean_or_string
-              ['sig { params(value: T.any(String, T::Boolean)).returns(FunHtml::Attribute) }',
+              ['sig { params(value: T.any(String, T::Boolean)).returns(Typewriter::Attribute) }',
                "def #{name}(value);end"]
             in :number
-              ['sig { params(value: Numeric).returns(FunHtml::Attribute) }',
+              ['sig { params(value: Numeric).returns(Typewriter::Attribute) }',
                "def #{name}(value);end"]
             in :number_or_datetime | :number_or_string
-              ['sig { params(value: T.any(Numeric, String)).returns(FunHtml::Attribute) }',
+              ['sig { params(value: T.any(Numeric, String)).returns(Typewriter::Attribute) }',
                "def #{name}(value);end"]
             in :color |
               :datetime |
               :enum |
               :string |
               :url
-              ['sig { params(value: String).returns(FunHtml::Attribute) }',
+              ['sig { params(value: String).returns(Typewriter::Attribute) }',
                "def #{name}(value);end"]
             else
               raise meta[:type].to_s

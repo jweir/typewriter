@@ -765,6 +765,8 @@ module Typewriter
     sig { params(value: T::Boolean).returns(Typewriter::Attribute) }
     def async(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
+    def autocapitalize(value); end
+    sig { params(value: String).returns(Typewriter::Attribute) }
     def autocomplete(value); end
     sig { params(value: T::Boolean).returns(Typewriter::Attribute) }
     def autofocus(value); end
@@ -791,6 +793,8 @@ module Typewriter
     sig { params(value: String).returns(Typewriter::Attribute) }
     def coords(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
+    def crossorigin(value); end
+    sig { params(value: String).returns(Typewriter::Attribute) }
     def datetime(value); end
     sig { params(value: T::Boolean).returns(Typewriter::Attribute) }
     def default(value); end
@@ -807,11 +811,21 @@ module Typewriter
     sig { params(value: String).returns(Typewriter::Attribute) }
     def enctype(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
+    def enterkeyhint(value); end
+    sig { params(value: String).returns(Typewriter::Attribute) }
     def for(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
     def form(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
     def formaction(value); end
+    sig { params(value: String).returns(Typewriter::Attribute) }
+    def formenctype(value); end
+    sig { params(value: String).returns(Typewriter::Attribute) }
+    def formmethod(value); end
+    sig { params(value: T::Boolean).returns(Typewriter::Attribute) }
+    def formnovalidate(value); end
+    sig { params(value: String).returns(Typewriter::Attribute) }
+    def formtarget(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
     def headers(value); end
     sig { params(value: T.any(Numeric, String)).returns(Typewriter::Attribute) }
@@ -825,7 +839,13 @@ module Typewriter
     sig { params(value: String).returns(Typewriter::Attribute) }
     def hreflang(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
+    def fetchpriority(value); end
+    sig { params(value: String).returns(Typewriter::Attribute) }
     def id(value); end
+    sig { params(value: T::Boolean).returns(Typewriter::Attribute) }
+    def inert(value); end
+    sig { params(value: String).returns(Typewriter::Attribute) }
+    def inputmode(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
     def integrity(value); end
     sig { params(value: T::Boolean).returns(Typewriter::Attribute) }
@@ -838,6 +858,8 @@ module Typewriter
     def lang(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
     def list(value); end
+    sig { params(value: String).returns(Typewriter::Attribute) }
+    def loading(value); end
     sig { params(value: T::Boolean).returns(Typewriter::Attribute) }
     def loop(value); end
     sig { params(value: Numeric).returns(Typewriter::Attribute) }
@@ -852,12 +874,16 @@ module Typewriter
     def method(value); end
     sig { params(value: T.any(Numeric, String)).returns(Typewriter::Attribute) }
     def min(value); end
+    sig { params(value: Numeric).returns(Typewriter::Attribute) }
+    def minlength(value); end
     sig { params(value: T::Boolean).returns(Typewriter::Attribute) }
     def multiple(value); end
     sig { params(value: T::Boolean).returns(Typewriter::Attribute) }
     def muted(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
     def name(value); end
+    sig { params(value: String).returns(Typewriter::Attribute) }
+    def nonce(value); end
     sig { params(value: T::Boolean).returns(Typewriter::Attribute) }
     def novalidate(value); end
     sig { params(value: T::Boolean).returns(Typewriter::Attribute) }
@@ -869,11 +895,15 @@ module Typewriter
     sig { params(value: String).returns(Typewriter::Attribute) }
     def placeholder(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
+    def popover(value); end
+    sig { params(value: String).returns(Typewriter::Attribute) }
     def poster(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
     def preload(value); end
     sig { params(value: T::Boolean).returns(Typewriter::Attribute) }
     def readonly(value); end
+    sig { params(value: String).returns(Typewriter::Attribute) }
+    def referrerpolicy(value); end
     sig { params(value: String).returns(Typewriter::Attribute) }
     def rel(value); end
     sig { params(value: T::Boolean).returns(Typewriter::Attribute) }

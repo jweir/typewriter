@@ -17,6 +17,8 @@ module Typewriter
     def alt(value) = write(' alt="', value)
     # Script should execute asynchronously
     def async(value) = write_boolean(' async', value)
+    # Controls automatic capitalization of user input
+    def autocapitalize(value) = write(' autocapitalize="', value)
     # Form/input autocompletion
     def autocomplete(value) = write(' autocomplete="', value)
     # Element should be focused on page load
@@ -43,6 +45,8 @@ module Typewriter
     def controls(value) = write_boolean(' controls', value)
     # Coordinates for image maps
     def coords(value) = write(' coords="', value)
+    # How to handle cross-origin requests
+    def crossorigin(value) = write(' crossorigin="', value)
     # Date/time of element content
     def datetime(value) = write(' datetime="', value)
     # Default track for media
@@ -59,12 +63,22 @@ module Typewriter
     def draggable(value) = write(' draggable="', value)
     # Form data encoding for submission
     def enctype(value) = write(' enctype="', value)
+    # Action label for virtual keyboard enter key
+    def enterkeyhint(value) = write(' enterkeyhint="', value)
     # Associates label with form control
     def for(value) = write(' for="', value)
     # Form the element belongs to
     def form(value) = write(' form="', value)
     # URL for form submission
     def formaction(value) = write(' formaction="', value)
+    # Encoding type for form data when submitted via this button
+    def formenctype(value) = write(' formenctype="', value)
+    # HTTP method for form submission via this button
+    def formmethod(value) = write(' formmethod="', value)
+    # Skip form validation when submitting via this button
+    def formnovalidate(value) = write_boolean(' formnovalidate', value)
+    # Where to display response when submitting form via this button
+    def formtarget(value) = write(' formtarget="', value)
     # Related header cells for data cell
     def headers(value) = write(' headers="', value)
     # Height of element
@@ -77,8 +91,14 @@ module Typewriter
     def href(value) = write(' href="', value)
     # Language of linked resource
     def hreflang(value) = write(' hreflang="', value)
+    # Hint for relative priority of resource fetching
+    def fetchpriority(value) = write(' fetchpriority="', value)
     # Unique identifier for element
     def id(value) = write(' id="', value)
+    # Element is inert (non-interactive)
+    def inert(value) = write_boolean(' inert', value)
+    # Hint about expected input type for virtual keyboards
+    def inputmode(value) = write(' inputmode="', value)
     # Subresource integrity hash
     def integrity(value) = write(' integrity="', value)
     # Image is server-side image map
@@ -91,6 +111,8 @@ module Typewriter
     def lang(value) = write(' lang="', value)
     # Links input to datalist options
     def list(value) = write(' list="', value)
+    # Indicates how browser should load the resource
+    def loading(value) = write(' loading="', value)
     # Media will replay when finished
     def loop(value) = write_boolean(' loop', value)
     # Lower range of meter
@@ -105,12 +127,16 @@ module Typewriter
     def method(value) = write(' method="', value)
     # Minimum allowed value
     def min(value) = write(' min="', value)
+    # Minimum length of input
+    def minlength(value) = write(' minlength="', value)
     # Multiple values can be selected
     def multiple(value) = write_boolean(' multiple', value)
     # Media is muted by default
     def muted(value) = write_boolean(' muted', value)
     # Name of form control
     def name(value) = write(' name="', value)
+    # Cryptographic nonce for Content Security Policy
+    def nonce(value) = write(' nonce="', value)
     # Form validation is skipped
     def novalidate(value) = write_boolean(' novalidate', value)
     # Details element is expanded
@@ -121,12 +147,16 @@ module Typewriter
     def pattern(value) = write(' pattern="', value)
     # Hint text for input field
     def placeholder(value) = write(' placeholder="', value)
+    # Popover state
+    def popover(value) = write(' popover="', value)
     # Preview image for video
     def poster(value) = write(' poster="', value)
     # How media should be loaded
     def preload(value) = write(' preload="', value)
     # Input field cannot be modified
     def readonly(value) = write_boolean(' readonly', value)
+    # Referrer policy for requests initiated by the element
+    def referrerpolicy(value) = write(' referrerpolicy="', value)
     # Relationship of linked resource
     def rel(value) = write(' rel="', value)
     # Input must be filled out
